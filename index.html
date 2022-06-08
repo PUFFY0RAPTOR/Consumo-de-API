@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Productos</title>
+</head>
+<body>
+    <h1 id="titulo"> Productos </h1>
+
+    <div class="row">
+        <div class="input-field col s2">
+            <form action="">
+                <input type="text" placeholder="Producto">
+                <button class="waves-effect waves-light btn blue lighten-1"><i class="material-icons left">search</i>Buscar</button>
+                <button class="waves-effect waves-light btn green lighten-1" id="botoncito"><i class="material-icons left">add</i>Crear producto</button>
+            </form>
+        </div>
+
+        <div class="input-field col s2">
+            <form action="">
+                <input type="text" placeholder="Actualizar" id="input2">
+                <button class="waves-effect waves-light btn yellow darken-2 lighten-1" id="actualizar"><i class="material-icons left">create</i>Actualizar</button>
+            </form>
+        </div>
+
+        <div class="input-field col s2">
+            <form action="">
+                <input type="text" placeholder="Eliminar" id="input3">
+                <button class="waves-effect waves-light btn red lighten-1" id="eliminar"><i class="material-icons left">delete</i>Eliminar</button>
+            </form>
+        </div>
+      
+        <div class="row" id="contenedor">
+            <div class="col s6 m2">
+              <div class="card">
+                <div class="card-image">
+                  <img id="imgProducto" />
+                  <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                  <h4 id="nombreProducto">Nombre del Producto</h4>
+                  <p id="descripcion">Descripción del Producto</p>
+                  <h4 id="precio"></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <script src="JavaScript/main.js" ></script>
+</body>
+</html>

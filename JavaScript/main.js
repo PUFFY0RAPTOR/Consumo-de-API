@@ -6,31 +6,38 @@ const botoncito = document.getElementById('botoncito');
 const actualizar = document.getElementById('actualizar');
 const eliminar = document.getElementById('eliminar');
 const contProductos = document.getElementById('contProductos');
+const showAll = document.getElementById('todos');
+
 
 button.addEventListener('click', (e) =>{
     e.preventDefault(); //Evita recargar la página
     traerProductos(input.value);
 });
 
+showAll.addEventListener('click', (todos) =>{
+    todos.preventDefault();
+    mostrarTodosProd();
+});
+
 botoncito.addEventListener('click', (s) => {
     s.preventDefault();
     registrarProductos();
-})
+});
 
 actualizar.addEventListener('click', (actual) => {
     actual.preventDefault();
     actualProductos(input.value);
-})
+});
 
 eliminar.addEventListener('click', (pep) => {
     pep.preventDefault();
     eliminarProducto(input.value);
-})
+});
 
 window.addEventListener('load', (listica) =>{
     listica.preventDefault();
     pruebaLista();
-})
+});
 
 function traerProductos(res){
     fetch(`https://fakestoreapi.com/products/${res}`)
@@ -38,6 +45,14 @@ function traerProductos(res){
     .then(data => {
         verProductos(data)
     })
+}
+
+function mostrarTodosProd(){
+    fetch('https://fakestoreapi.com/products')
+        .then(res=>res.json())
+        .then(data=>{
+            tarjetas(data)
+        })
 }
 
 function verProductos(nomProd){
@@ -55,8 +70,29 @@ function verProductos(nomProd){
     precio.textContent = nomProd.price;
 }
 
-function tarjetas(){
-    
+function tarjetas(nomProductos){
+
+    let divisito = document.getElementById('contProductos');
+
+    nomProductos.forEach(nomProductos => {
+                                
+        divisito.innerHTML += `
+            <div id="divTarjeta">
+                <div class="col s2">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="${nomProductos.image}"/>
+                        </div>
+                        <div class="card-content">
+                            <h4>${nomProductos.title}</h4>
+                            <p>${nomProductos.description}</p>
+                            <h4>${nomProductos.price}</h4>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        `
+    });
 }
 
 function registrarProductos(){

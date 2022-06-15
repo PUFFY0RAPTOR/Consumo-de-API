@@ -5,7 +5,7 @@ const button = document.querySelector('button');
 const botoncito = document.getElementById('botoncito');
 const actualizar = document.getElementById('actualizar');
 const input2 = document.getElementById('input2');
-const input3 = document.getElementsById('input3');
+const eliminar = document.getElementById('eliminar');
 
 button.addEventListener('click', (e) =>{
     e.preventDefault(); //Evita recargar la página
@@ -17,11 +17,15 @@ botoncito.addEventListener('click', (s) => {
     registrarProductos();
 })
 
-input2-addEventListener('click', (actual) => {
+actualizar.addEventListener('click', (actual) => {
     actual.preventDefault();
-    actualProductos(input2.value);
+    actualProductos(input.value);
 })
 
+eliminar.addEventListener('click', (pep) => {
+    pep.preventDefault();
+    eliminarProducto(input.value);
+})
 
 
 function traerProductos(res){

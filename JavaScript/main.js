@@ -5,6 +5,7 @@ const button = document.querySelector('button');
 const botoncito = document.getElementById('botoncito');
 const actualizar = document.getElementById('actualizar');
 const eliminar = document.getElementById('eliminar');
+const contProductos = document.getElementById('contProductos');
 
 button.addEventListener('click', (e) =>{
     e.preventDefault(); //Evita recargar la página
@@ -26,6 +27,10 @@ eliminar.addEventListener('click', (pep) => {
     eliminarProducto(input.value);
 })
 
+window.addEventListener('load', (listica) =>{
+    listica.preventDefault();
+    pruebaLista();
+})
 
 function traerProductos(res){
     fetch(`https://fakestoreapi.com/products/${res}`)
@@ -48,6 +53,10 @@ function verProductos(nomProd){
 
     const precio = document.getElementById('precio');
     precio.textContent = nomProd.price;
+}
+
+function tarjetas(){
+    
 }
 
 function registrarProductos(){
@@ -93,4 +102,36 @@ function eliminarProducto(id){
         })
             .then(res=>res.json())
             .then(json=>console.log(json))
+}
+
+function pruebaLista(){
+    fetch('https://fakestoreapi.com/products?limit=5')
+            .then(res=>res.json())
+            .then((json)=>{
+                listarProd(json)
+            })
+}
+
+function listarProd(dato){
+    //console.log(dato)
+
+    let lista = document.getElementById('bodyTable');
+    //lista.innerHTML= '';
+
+    //let datosCambio = JSON.stringify(dato);
+    //let datosCambio = dato;
+    //let datosFinal = [];
+
+    //datosFinal = datosCambio.appendChild();
+
+    dato.forEach((dato) => {
+        lista.innerHTML += `
+        <tr>
+            <td>${dato.title}</td>
+            <td>${dato.category}</td>
+            <td>${dato.price}</td>
+            <td><img class="imgTabla" src="${dato.image}"/></td>
+        </tr>
+        `
+    }); 
 }

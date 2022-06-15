@@ -4,7 +4,6 @@ const info = document.getElementById('contenedor');
 const button = document.querySelector('button');
 const botoncito = document.getElementById('botoncito');
 const actualizar = document.getElementById('actualizar');
-const input2 = document.getElementById('input2');
 const eliminar = document.getElementById('eliminar');
 
 button.addEventListener('click', (e) =>{

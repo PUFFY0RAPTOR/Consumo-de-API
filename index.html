@@ -9,12 +9,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
   <title>Productos</title>
 </head>
 
 <body>
   <h1 id="titulo"> Productos </h1>
 
+  <a href="carrito.html" class="waves-effect waves-light btn pink" id="carrito">
+    <i class="material-icons left">shopping_cart</i>Carrito de compras
+  </a>
+  
   <div class="row">
     <div class="input-field col s2">
       <form action="">
@@ -33,6 +38,7 @@
       <div class="card hoverable">
         <div class="card-image">
           <img id="imgProducto" />
+          <a class="btn-floating halfway-fab waves-effect waves-light cyan darken-1"><i class="material-icons">add_shopping_cart</i></a>
         </div>
         <div class="card-content">
           <h4 id="nombreProducto">Nombre del Producto</h4>
@@ -62,6 +68,7 @@
   </div>
 
   <script src="JavaScript/main.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

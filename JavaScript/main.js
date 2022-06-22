@@ -7,7 +7,15 @@ const actualizar = document.getElementById('actualizar');
 const eliminar = document.getElementById('eliminar');
 const contProductos = document.getElementById('contProductos');
 const showAll = document.getElementById('todos');
+const showAllCart = document.querySelector('.bebe');
 
+
+var lista = [];
+
+showAllCart.addEventListener('click', (e) =>{
+    e.preventDefault();
+    mostrarCarrito();   
+});
 
 button.addEventListener('click', (e) =>{
     e.preventDefault(); //Evita recargar la página
@@ -82,6 +90,7 @@ function tarjetas(nomProductos){
                     <div class="card hoverable">
                         <div class="card-image">
                             <img src="${nomProductos.image}"/>
+                            <a onclick="añadirCarro(${nomProductos.id})" class="btn-floating halfway-fab waves-effect waves-light cyan darken-1"><i class="material-icons">add_shopping_cart</i></a>
                         </div>
                         <div class="card-content">
                             <h4>${nomProductos.title}</h4>
@@ -171,3 +180,58 @@ function listarProd(dato){
         `
     }); 
 }
+
+
+/*----------------------------------------Carrito de compras----------------------------------------*/
+
+
+function añadirCarro(id){
+    //console.log(id);
+    fetch(`https://fakestoreapi.com/products/${id}`)
+            .then(res=>res.json())
+            .then(json=>lista.push(json))
+}
+
+
+function mostrarCarrito(json){
+
+
+
+    console.log(lista);
+}
+
+
+
+
+
+
+
+
+
+
+/*function envCookie(){
+
+    let info = {
+        "nombre":"Sebas",
+        "apell":"per"
+    };
+    
+    localStorage.setItem("pepe", info);
+    //console.log(localStorage.getItem("pepe"));
+}
+
+function leerCookie(){
+
+    let recib = localStorage.getItem("pepe");
+
+    if (recib == null || recib == "null") {
+        
+        console.log("No hay cookies");
+
+    } else{
+
+        console.log(recib);
+
+    }
+
+}*/

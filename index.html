@@ -16,7 +16,7 @@
 <body>
   <h1 id="titulo"> Productos </h1>
 
-  <a href="carrito.html" class="waves-effect waves-light btn pink" id="carrito">
+  <a href="carrito.html" target="_blank" class="waves-effect waves-light btn pink" id="carrito">
     <i class="material-icons left">shopping_cart</i>Carrito de compras
   </a>
   
@@ -24,7 +24,7 @@
     <div class="input-field col s2">
       <form action="">
         <input type="text" placeholder="Producto">
-        <button class="waves-effect waves-light btn blue lighten-1"><i class="material-icons left">search</i>Buscar</button>
+        <button class="waves-effect waves-light btn blue lighten-1" id="primerBoton"><i class="material-icons left">search</i>Buscar</button>
         <button class="waves-effect waves-light btn green lighten-1" id="botoncito"><i class="material-icons left">add</i>Crear producto</button>
         <button class="waves-effect waves-light btn yellow darken-2 lighten-1" id="actualizar"><i class="material-icons left">create</i>Actualizar</button>
         <button class="waves-effect waves-light btn red lighten-1" id="eliminar"><i class="material-icons left">delete</i>Eliminar</button>
@@ -38,7 +38,7 @@
       <div class="card hoverable">
         <div class="card-image">
           <img id="imgProducto" />
-          <a class="btn-floating halfway-fab waves-effect waves-light cyan darken-1"><i class="material-icons">add_shopping_cart</i></a>
+          <a onclick="añadirCarro()" class="btn-floating halfway-fab waves-effect waves-light cyan darken-1"><i class="material-icons">add_shopping_cart</i></a>
         </div>
         <div class="card-content">
           <h4 id="nombreProducto">Nombre del Producto</h4>

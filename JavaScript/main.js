@@ -1,21 +1,13 @@
 const titulo = document.getElementById('h1');
 const input = document.querySelector('input');
 const info = document.getElementById('contenedor'); 
-const button = document.querySelector('button');
+const button = document.getElementById('primerBoton');
 const botoncito = document.getElementById('botoncito');
 const actualizar = document.getElementById('actualizar');
 const eliminar = document.getElementById('eliminar');
 const contProductos = document.getElementById('contProductos');
 const showAll = document.getElementById('todos');
-const showAllCart = document.querySelector('.bebe');
 
-
-var lista = [];
-
-showAllCart.addEventListener('click', (e) =>{
-    e.preventDefault();
-    mostrarCarrito();   
-});
 
 button.addEventListener('click', (e) =>{
     e.preventDefault(); //Evita recargar la página
@@ -180,34 +172,6 @@ function listarProd(dato){
         `
     }); 
 }
-
-
-/*----------------------------------------Carrito de compras----------------------------------------*/
-
-
-function añadirCarro(id){
-    //console.log(id);
-    fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(res=>res.json())
-            .then(json=>lista.push(json))
-}
-
-
-function mostrarCarrito(json){
-
-
-
-    console.log(lista);
-}
-
-
-
-
-
-
-
-
-
 
 /*function envCookie(){
 

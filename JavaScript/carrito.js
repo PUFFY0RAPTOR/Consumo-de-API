@@ -14,7 +14,6 @@ function añadirCarro(id){
             .then(json=>lista.push(json))
 }
 
-
 function mostrarCarrito(json){
 
     console.log(lista);
@@ -29,8 +28,12 @@ function leerCookie(){
         console.log("No hay cookies");
 
     } else{
-
-        console.log(recib);
+        for (const i of recib) {
+            if (i > 0) {
+                //console.log(i);
+                añadirCarro(i);
+            }
+        }
     }
 }
 

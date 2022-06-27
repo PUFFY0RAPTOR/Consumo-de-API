@@ -7,7 +7,15 @@ const actualizar = document.getElementById('actualizar');
 const eliminar = document.getElementById('eliminar');
 const contProductos = document.getElementById('contProductos');
 const showAll = document.getElementById('todos');
+const cookie = document.querySelector('.cookie');
 
+var listaId = [];
+
+cookie.addEventListener('click', (e) =>{
+    e.preventDefault();
+    productoTraer(input.value);
+    //console.log(input.value);
+})
 
 button.addEventListener('click', (e) =>{
     e.preventDefault(); //Evita recargar la página
@@ -82,7 +90,7 @@ function tarjetas(nomProductos){
                     <div class="card hoverable">
                         <div class="card-image">
                             <img src="${nomProductos.image}"/>
-                            <a onclick="añadirCarro(${nomProductos.id})" class="btn-floating halfway-fab waves-effect waves-light cyan darken-1"><i class="material-icons">add_shopping_cart</i></a>
+                            <a onclick="productoTraer(${nomProductos.id})" class="btn-floating halfway-fab waves-effect waves-light cyan darken-1"><i class="material-icons">add_shopping_cart</i></a>
                         </div>
                         <div class="card-content">
                             <h4>${nomProductos.title}</h4>
@@ -173,9 +181,18 @@ function listarProd(dato){
     }); 
 }
 
-function envCookie(){
-    
-    localStorage.setItem("pepe", "Estoy recibiendo la cookie");
+function productoTraer(idRec){
+    fetch(`https://fakestoreapi.com/products/${idRec}`)
+    .then(res => res.json())
+    .then(data => {
+        envCookie(listaId.push(data.id))
+    })
+}
+
+function envCookie(dato){
+    console.log(listaId);
+    localStorage.setItem("pepe", listaId);
     //console.log(localStorage.getItem("pepe"));
+
 }
 

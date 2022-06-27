@@ -161,13 +161,6 @@ function listarProd(dato){
     //console.log(dato)
 
     let lista = document.getElementById('bodyTable');
-    //lista.innerHTML= '';
-
-    //let datosCambio = JSON.stringify(dato);
-    //let datosCambio = dato;
-    //let datosFinal = [];
-
-    //datosFinal = datosCambio.appendChild();
 
     dato.forEach((dato) => {
         lista.innerHTML += `

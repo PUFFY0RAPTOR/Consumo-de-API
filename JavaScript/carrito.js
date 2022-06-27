@@ -14,9 +14,29 @@ function añadirCarro(id){
             .then(json=>lista.push(json))
 }
 
-function mostrarCarrito(json){
+function mostrarCarrito(){
 
     console.log(lista);
+
+    let divProductos = document.querySelector('.carProductos');
+
+    lista.forEach((lista) => {
+        divProductos.innerHTML += `
+            <tr>
+                <td><img class="imgTabla" src="${lista.image}"/></td>
+                <td>${lista.title}</td>
+                <td>${lista.description}</td>
+                <td>${lista.price}</td>
+                <td><input type="number" class="subtotal" value="0" /></td>
+            </tr>
+        `
+    });
+
+    const input = document.querySelector('.subtotal');
+
+    let suma = lista.price * input.value;
+    console.log(suma);
+
 }
 
 function leerCookie(){

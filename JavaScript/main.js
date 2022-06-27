@@ -173,29 +173,9 @@ function listarProd(dato){
     }); 
 }
 
-/*function envCookie(){
-
-    let info = {
-        "nombre":"Sebas",
-        "apell":"per"
-    };
+function envCookie(){
     
-    localStorage.setItem("pepe", info);
+    localStorage.setItem("pepe", "Estoy recibiendo la cookie");
     //console.log(localStorage.getItem("pepe"));
 }
 
-function leerCookie(){
-
-    let recib = localStorage.getItem("pepe");
-
-    if (recib == null || recib == "null") {
-        
-        console.log("No hay cookies");
-
-    } else{
-
-        console.log(recib);
-
-    }
-
-}*/

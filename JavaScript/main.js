@@ -86,15 +86,14 @@ function tarjetas(nomProductos){
                                 
         divisito.innerHTML += `
             <div id="divTarjeta">
-                <div class="col s2">
+                <div class="col s2 m2">
                     <div class="card hoverable">
                         <div class="card-image">
                             <img src="${nomProductos.image}"/>
-                            <a onclick="productoTraer(${nomProductos.id})" class="btn-floating halfway-fab waves-effect waves-light cyan darken-1"><i class="material-icons">add_shopping_cart</i></a>
+                            <a onclick="envCookie(${nomProductos.id})" class="btn-floating halfway-fab waves-effect waves-light cyan darken-1"><i class="material-icons">add_shopping_cart</i></a>
                         </div>
                         <div class="card-content">
-                            <h4>${nomProductos.title}</h4>
-                            <p>${nomProductos.description}</p>
+                            <!--<h4>${nomProductos.title}</h4>-->
                             <h4>${nomProductos.price}</h4>
                         </div>
                     </div>
@@ -174,18 +173,10 @@ function listarProd(dato){
     }); 
 }
 
-function productoTraer(idRec){
-    fetch(`https://fakestoreapi.com/products/${idRec}`)
-    .then(res => res.json())
-    .then(data => {
-        envCookie(listaId.push(data.id))
-    })
-}
-
 function envCookie(dato){
+    listaId.push(dato);
     console.log(listaId);
     localStorage.setItem("pepe", listaId);
     //console.log(localStorage.getItem("pepe"));
-
 }
 

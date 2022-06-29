@@ -30,26 +30,31 @@ function mostrarCarrito(){
                 <td><input type="number" class="subtotal" value="0" /></td>
             </tr>
         `
-    });
+    }
+    );
 
-    const input = document.querySelector('.subtotal');
+    //lista = [];
 
-    let suma = lista.price * input.value;
-    console.log(suma);
+    //const input = document.querySelector('.subtotal');
+
+    //let suma = lista.price * input.value;
+    //console.log(suma);
 
 }
 
 function leerCookie(){
 
     let recib = localStorage.getItem("pepe");
+    let arr = JSON.parse("["+recib+"]");
 
     if (recib == null || recib == "null") {
         
         console.log("No hay cookies");
 
     } else{
-        for (const i of recib) {
-            if (i > 0) {
+        //console.log(arr);
+        for (const i of arr) {
+            if (i > 0){
                 //console.log(i);
                 añadirCarro(i);
             }
@@ -65,4 +70,4 @@ function eliminarCookie(){
     }else{
         console.log(borrar);
     }
-}   
+}

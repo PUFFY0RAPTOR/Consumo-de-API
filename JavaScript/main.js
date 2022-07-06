@@ -25,21 +25,56 @@ button.addEventListener('click', (e) =>{
 showAll.addEventListener('click', (todos) =>{
     todos.preventDefault();
     mostrarTodosProd();
+    swal({
+        icon: "success",
+        title: "Productos traídos correctamnente"
+    });
 });
 
 botoncito.addEventListener('click', (s) => {
     s.preventDefault();
     registrarProductos();
+    swal({
+        icon: "success", 
+        title: "Producto agregado correctamente"
+    });
 });
 
 actualizar.addEventListener('click', (actual) => {
     actual.preventDefault();
     actualProductos(input.value);
+    if (input.value == 0){
+        swal({
+            icon: "warning", 
+            title: "Debe buscar un producto antes para que pueda ser editado"
+        });
+    }else {
+        swal({
+            icon: "success", 
+            title: "Producto actualizado correctamente"
+        });
+    }
 });
 
 eliminar.addEventListener('click', (pep) => {
     pep.preventDefault();
     eliminarProducto(input.value);
+    swal({
+        title: "¿Está seguro/a?",
+        text: "Una vez eliminado no podrá recuperar este producto...",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((borrar) => {
+        if (borrar) {
+          swal("El producto se eliminó correctamente", {
+            icon: "success",
+          });
+        } else {
+          swal("No se eliminó ningún producto");
+        }
+      });
 });
 
 window.addEventListener('load', (listica) =>{

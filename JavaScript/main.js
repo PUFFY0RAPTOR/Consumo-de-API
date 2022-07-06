@@ -27,7 +27,7 @@ showAll.addEventListener('click', (todos) =>{
     mostrarTodosProd();
     swal({
         icon: "success",
-        title: "Productos traídos correctamnente"
+        title: "Productos traídos correctamente"
     });
 });
 
@@ -124,7 +124,7 @@ function tarjetas(nomProductos){
                 <div class="col s2 m2">
                     <div class="card hoverable">
                         <div class="card-image">
-                            <img src="${nomProductos.image}"/>
+                            <img src="${nomProductos.image}" width="400px" height="250px" />
                             <a onclick="envCookie(${nomProductos.id})" class="btn-floating halfway-fab waves-effect waves-light cyan darken-1"><i class="material-icons">add_shopping_cart</i></a>
                         </div>
                         <div class="card-content">

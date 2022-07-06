@@ -5,6 +5,12 @@ var lista = [];
 showAllCart.addEventListener('click', (e) =>{
     e.preventDefault();
     mostrarCarrito();   
+    if (lista == 0){
+        swal({
+            icon: "warning",
+            title: "El carrito está vacio"
+        });
+    }
 });
 
 function añadirCarro(id){
@@ -27,19 +33,19 @@ function mostrarCarrito(){
                 <td>${lista.title}</td>
                 <td>${lista.description}</td>
                 <td>${lista.price}</td>
-                <td><input type="number" class="subtotal" value="0" /></td>
+                <td><input type="number" class="subtotal" value="1" /></td>
+                <td><button onclick="eliminarCarrito(${lista.id})" class="waves-effect waves-light btn red lighten-1"><i class="material-icons">delete</i>Eliminar</button></td>
             </tr>
         `
     }
     );
+    totalPrecio();
+}
 
-    //lista = [];
-
-    //const input = document.querySelector('.subtotal');
-
-    //let suma = lista.price * input.value;
-    //console.log(suma);
-
+function eliminarCarrito(valor){
+    lista.pop(valor);
+    //console.log(lista);
+    //mostrarCarrito();
 }
 
 function leerCookie(){
@@ -70,4 +76,16 @@ function eliminarCookie(){
     }else{
         console.log(borrar);
     }
+}
+
+function totalPrecio(){
+    const precio = document.getElementById('total');
+    
+    let suma = 0;
+
+    lista.forEach((lista) => {
+        suma += lista.price;
+    });
+
+    precio.innerHTML = suma;
 }

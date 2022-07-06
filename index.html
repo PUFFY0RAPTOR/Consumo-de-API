@@ -14,14 +14,10 @@
 </head>
 
 <body>
-  <h1 id="titulo"> Productos </h1>
+  <h1 id="titulo" class="center"> Productos </h1>
 
-  <a href="carrito.html" target="_blank" class="waves-effect waves-light btn pink" id="carrito">
-    <i class="material-icons left">shopping_cart</i>Carrito de compras
-  </a>
-  
-  <div class="row">
-    <div class="input-field col s2">
+  <div class="center">
+    <div class="input-field inline">
       <form action="">
         <input type="text" placeholder="Producto">
         <button class="waves-effect waves-light btn blue lighten-1" id="primerBoton"><i class="material-icons left">search</i>Buscar</button>
@@ -33,23 +29,31 @@
     </div>
   </div>
 
-  <div class="row" id="contenedor">
-    <div class="col s6 m2">
-      <div class="card hoverable">
-        <div class="card-image">
-          <img id="imgProducto" />
-          <a class="btn-floating halfway-fab waves-effect waves-light cyan darken-1 cookie"><i class="material-icons">add_shopping_cart</i></a>
-        </div>
-        <div class="card-content">
-          <h4 id="nombreProducto">Nombre del Producto</h4>
-          <p id="descripcion">Descripción del Producto</p>
-          <h4 id="precio"></h4>
+  <br><div class="center">
+    <a href="carrito.html" target="_blank" class="waves-effect waves-light btn pink" id="carrito">
+      <i class="material-icons left">shopping_cart</i>Carrito de compras
+    </a>
+  </div><br>
+  
+  <br><div id="contenedor">
+    <div class="center">
+      <div class="col s6 m2">
+        <div class="card hoverable">
+          <div class="card-image">
+            <img id="imgProducto" width="450px"/>
+            <a class="btn-floating halfway-fab waves-effect waves-light cyan darken-1 cookie"><i class="material-icons">add_shopping_cart</i></a>
+          </div>
+          <div class="card-content">
+            <h4 id="nombreProducto">Nombre del Producto</h4>
+            <p id="descripcion">Descripción del Producto</p>
+            <h4 id="precio"></h4>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </div><br>
 
-  <div id="contProductos" class="row"></div>
+  <div id="contProductos" class="row"></div><br>
 
   <div id="tabla">
     <table class="highlight centered responsive-table">

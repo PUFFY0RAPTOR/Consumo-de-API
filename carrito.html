@@ -15,9 +15,9 @@
 
 <body onload="leerCookie()">
 
-    <h1> Carrito de compras</h1>
+    <h1 class="center"> Carrito de compras</h1>
 
-    <div>
+    <div class="center">
         <a href="" class="waves-effect waves-light btn pink bebe">
             <i class="material-icons left">shopping_cart</i>Mostrar
         </a>
@@ -34,6 +34,7 @@
                 <th>Descripción</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
+                <th>Opciones</th>
             </thead>
             <tbody class="carProductos">
                 
@@ -41,7 +42,10 @@
         </table>
     </div>
 
-    <br><h3>Subtotal:</h3>
+    <br><h3>Total: 
+        <span id="total">
+        </span> $
+    </h3>
     
 
     <script src="JavaScript/carrito.js"></script>

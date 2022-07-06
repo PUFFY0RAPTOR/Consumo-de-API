@@ -13,7 +13,12 @@
     height: 200px;
 }
 
-#carrito{
+/*#carrito{
     float: right;
-    
+}*/
+
+#contenedor{
+    /*padding: 100px;*/
+    width: 30%;
+    margin: auto;
 }

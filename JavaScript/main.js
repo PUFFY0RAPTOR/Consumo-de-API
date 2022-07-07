@@ -212,6 +212,5 @@ function envCookie(dato){
     listaId.push(dato);
     console.log(listaId);
     localStorage.setItem("pepe", listaId);
-    //console.log(localStorage.getItem("pepe"));
 }
 

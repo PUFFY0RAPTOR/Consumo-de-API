@@ -43,9 +43,18 @@ function mostrarCarrito(){
 }
 
 function eliminarCarrito(valor){
-    lista.pop(valor);
-    //console.log(lista);
-    //mostrarCarrito();
+
+    let nuevaLista = JSON.parse("["+localStorage.getItem("pepe")+"]");
+    nuevaLista = nuevaLista.filter(variable => variable !== valor);
+    lista = nuevaLista;
+    localStorage.setItem("pepe", nuevaLista);
+    /*swal({
+        icon: "success",
+        title: "Producto borrado correctamente, recargue la página y muestre nuevamente su carrito", 
+        timer: 5000
+    });*/
+    alert("Muestre el carrito nuevamente para ver los cambios");
+    location.reload();
 }
 
 function leerCookie(){
